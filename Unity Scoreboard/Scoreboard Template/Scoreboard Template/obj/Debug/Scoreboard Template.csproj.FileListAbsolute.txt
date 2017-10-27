@@ -1,0 +1,15 @@
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\Scoreboard Template.exe.config
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\Scoreboard Template.exe
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\Scoreboard Template.pdb
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csprojResolveAssemblyReference.cache
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\MainWindow.g.cs
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\App.g.cs
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template_MarkupCompile.cache
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template_MarkupCompile.lref
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\MainWindow.baml
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.g.resources
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard_Template.Properties.Resources.resources
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csproj.GenerateResource.Cache
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csproj.CoreCompileInputs.cache
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.exe
+K:\Users\Alex\Desktop\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.pdb
