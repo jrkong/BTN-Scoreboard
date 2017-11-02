@@ -23,8 +23,13 @@ namespace Scoreboard_Template
     {
         public MainWindow()
         {
-            string temp = File.ReadAllText(@"K:\Users\Alex\Desktop\Unity Scoreboard\Nightmares\Test_Data\Score.txt");
-            
+            string temp = File.ReadAllText(@"C:\School\BTN710\Assignment 1\BTN-Scoreboard-master\Unity Scoreboard\Nightmares\Test_Data\Score.txt");
+            DataHandler dh = new DataHandler();
+            if (!dh.verifyDatabase())
+            {
+                dh.initializeDatabase();
+            }
+
             InitializeComponent();
 
             Score_Label.Content = temp;
@@ -32,7 +37,13 @@ namespace Scoreboard_Template
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            DataHandler dh = new DataHandler();
+            if (dh.authenticate(tbUsername.Text, tbPassword.Text))
+            {
+                Leaderboard scores = new Leaderboard(tbUsername.Text, Score_Label.Content.ToString());
+                scores.Show();
+                this.Close();
+            }
         }
     }
 }
