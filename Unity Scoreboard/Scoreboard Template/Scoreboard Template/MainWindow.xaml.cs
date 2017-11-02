@@ -23,7 +23,7 @@ namespace Scoreboard_Template
     {
         public MainWindow()
         {
-            string temp = File.ReadAllText(@".\Score.txt"); //Change to correct relative path
+            string temp = File.ReadAllText(@"..\..\..\..\Nightmares\Test_Data\Score.txt"); //Change to correct relative path
             DataHandler dh = new DataHandler();
             if (!dh.verifyDatabase())
             {
