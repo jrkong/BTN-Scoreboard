@@ -23,7 +23,7 @@ namespace Scoreboard_Template
     {
         public MainWindow()
         {
-            string temp = File.ReadAllText(@"C:\School\BTN710\Assignment 1\BTN-Scoreboard-master\Unity Scoreboard\Nightmares\Test_Data\Score.txt");
+            string temp = File.ReadAllText(".\Test_Data\Score.txt"); //Change to correct relative path
             DataHandler dh = new DataHandler();
             if (!dh.verifyDatabase())
             {
