@@ -33,13 +33,15 @@ namespace Scoreboard_Template
             int databaseId = 0;
             query = "SELECT database_id FROM sys.databases WHERE Name = 'nightmares'";
             //conn = new SqlConnection("server=(local);Trusted_Connection=yes");  //Local db
-            MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder();
-            connectionString.Add("Server", "99.227.52.70");
-            connectionString.Add("Port", "8080");
-            connectionString.Add("Database", "InjectionDataBase");
-            connectionString.Add("Username", "Pat");
-            connectionString.Add("Password", "GG");
-            
+            MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder
+            {
+                { "Host", "99.227.52.70" },
+                { "Port", "8080" },
+                { "Database", "InjectionDataBase" },
+                { "UserId", "Pat" },
+                { "Password", "GG" }
+            };
+
             conn = new MySqlConnection(connectionString.ConnectionString);            
             try
             {
