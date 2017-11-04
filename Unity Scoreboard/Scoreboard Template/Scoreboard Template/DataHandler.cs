@@ -31,12 +31,12 @@ namespace Scoreboard_Template
         {
             bool exists = false;
             int databaseId = 0;
-            query = "SELECT database_id FROM sys.databases WHERE Name = 'nightmares'";
+            query = "SELECT testId FROM TestTable"; //change this later
             //conn = new SqlConnection("server=(local);Trusted_Connection=yes");  //Local db
             MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder
             {
                 { "Host", "99.227.52.70" },
-                { "Port", "8080" },
+                { "Port", "3306" },
                 { "Database", "InjectionDataBase" },
                 { "UserId", "Pat" },
                 { "Password", "GG" }
