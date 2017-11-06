@@ -31,3 +31,23 @@ C:\School\BTN710\Assignment 1\BTN-Scoreboard-master\Unity Scoreboard\Scoreboard 
 C:\School\BTN710\Assignment 1\BTN-Scoreboard-master\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template_Content.g.cs
 C:\School\BTN710\Assignment 1\BTN-Scoreboard-master\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Leaderboard.g.cs
 C:\School\BTN710\Assignment 1\BTN-Scoreboard-master\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Leaderboard.baml
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csprojResolveAssemblyReference.cache
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\MainWindow.g.cs
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Leaderboard.g.cs
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\App.g.cs
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template_Content.g.cs
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template_MarkupCompile.cache
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template_MarkupCompile.lref
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.exe
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.pdb
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\Scoreboard Template.exe.config
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\Scoreboard Template.exe
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\Scoreboard Template.pdb
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\MySql.Data.dll
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\bin\Debug\MySql.Data.xml
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\MainWindow.baml
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Leaderboard.baml
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.g.resources
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard_Template.Properties.Resources.resources
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csproj.GenerateResource.Cache
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csproj.CoreCompileInputs.cache

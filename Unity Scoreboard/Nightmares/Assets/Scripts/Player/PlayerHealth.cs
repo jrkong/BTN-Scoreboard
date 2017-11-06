@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System.Diagnostics;
+using System;
 
 namespace CompleteProject
 {
@@ -109,9 +110,30 @@ namespace CompleteProject
             Text scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
             string tmpString = scoreText.text;
             string strPath = Application.dataPath;
-            string strText = strPath + @"\Score.txt";
+            string strText = strPath + "\\Score.txt";
             File.WriteAllText(strText, tmpString);
-            Process.Start(strPath+ @"\Scoreboard Template.exe");
+
+            //int intTmp = strPath.IndexOf("Nightmares");
+            //string strScorePath = strPath.Substring(0, intTmp--);
+            //strScorePath = strScorePath + @"Scoreboard Template/Scoreboard Template/bin/Debug/Scoreboard Template.exe";
+
+            //Start scoreboard
+            //Process.Start(strPath + @"\Scoreboard Template.exe");
+            string strTest = strPath + "\\Linker.exe";
+            try
+            {
+                var processStartInfo = new ProcessStartInfo(Directory.GetCurrentDirectory() + "\\Assets\\Linker.exe");
+
+                processStartInfo.WorkingDirectory = Path.GetDirectoryName(Directory.GetCurrentDirectory() + "\\Assets\\Linker.exe");
+                processStartInfo.UseShellExecute = false;
+                var score = Process.Start(processStartInfo);
+                score.WaitForExit();
+            }
+            catch(Exception e)
+            {
+                print(e);
+            }
+
             // Reload the level that is currently loaded.
             SceneManager.LoadScene (0);
         }
