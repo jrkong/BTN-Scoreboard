@@ -26,7 +26,8 @@ namespace Linker
             string strPath = System.Reflection.Assembly.GetEntryAssembly().Location;
             int intTmp = strPath.IndexOf("Nightmares");
             string strScorePath = strPath.Substring(0, intTmp--);
-            strScorePath = strScorePath + @"Scoreboard Template/Scoreboard Template/bin/Debug/Scoreboard Template.exe";
+            //strScorePath = strScorePath + @"Scoreboard Template/Scoreboard Template/bin/Debug/Scoreboard Template.exe";
+            strScorePath = @"Scoreboard Template.exe"; //This will assume Linker.exe will be in the same folder as Scoreboard Template.exe, change when necessary
             //Start scoreboard
             var score = Process.Start(strScorePath);
 
