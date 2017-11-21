@@ -14,10 +14,9 @@ namespace Scoreboard_Template
 {
     class DataHandler
     {
-        //SqlConnection conn;
-        //SqlCommand cmd;
         MySqlConnection conn;
         MySqlCommand cmd;
+        MySqlConnectionStringBuilder connectionString;
         string query;
 
         public DataHandler()
@@ -25,6 +24,15 @@ namespace Scoreboard_Template
             conn = null;
             cmd = null;
             query = "";
+            connectionString = new MySqlConnectionStringBuilder
+            {
+                //{ "Host", "99.227.52.70" },
+                { "Host", "localhost" },
+                { "Port", "3306" },
+                { "Database", "InjectionDataBase" },
+                { "UserId", "Pat" },
+                { "Password", "GG" }
+            };
         }
 
         public bool verifyDatabase()
@@ -32,16 +40,6 @@ namespace Scoreboard_Template
             bool exists = false;
             int databaseId = 0;
             query = "SELECT testId FROM TestTable"; //change this later
-            //conn = new SqlConnection("server=(local);Trusted_Connection=yes");  //Local db
-            MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder
-            {
-                { "Host", "99.227.52.70" },
-                { "Port", "3306" },
-                { "Database", "InjectionDataBase" },
-                { "UserId", "Pat" },
-                { "Password", "GG" }
-            };
-
             conn = new MySqlConnection(connectionString.ConnectionString);            
             try
             {
@@ -70,21 +68,8 @@ namespace Scoreboard_Template
 
         public void initializeDatabase()
         {
-            query = "CREATE DATABASE nightmares";
-            conn = new MySqlConnection("server=(local);Trusted_Connection=yes");
-            cmd = new MySqlCommand(query, conn);
-            try
-            {
-                conn.Open();
-                cmd.ExecuteNonQuery();                
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
             query = File.ReadAllText(Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\create_tables.sql")));
-            conn = new MySqlConnection("server=(local);Trusted_Connection=yes;Initial Catalog=nightmares");
+            conn = new MySqlConnection(connectionString.ConnectionString);
             cmd = new MySqlCommand(query, conn);
             try
             {
@@ -108,11 +93,12 @@ namespace Scoreboard_Template
         public DataSet getScores()
         {
             DataSet ds = new DataSet();
-            conn = new MySqlConnection("server=(local);Trusted_Connection=yes;Initial Catalog=nightmares");
+            conn = new MySqlConnection(connectionString.ConnectionString);
             query =
-                "SELECT TOP 40 l.score, u.username, l.sDate FROM dbo.leaderboard l " +
-                "INNER JOIN dbo.users u ON l.userId = u.id " +
-                "ORDER BY l.score DESC";
+                "SELECT l.score, u.username, l.sDate FROM leaderboard l " +
+                "INNER JOIN users u ON l.userId = u.id " +
+                "ORDER BY l.score DESC " +
+                "LIMIT 40";
             MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
             try
             {
