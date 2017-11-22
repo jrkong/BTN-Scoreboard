@@ -23,7 +23,7 @@ namespace Scoreboard_Template
         public Leaderboard(String user, String score)
         {
             DataHandler dh = new DataHandler();
-            DataSet ds = dh.getScores();
+            DataSet ds = dh.getScores(user);
             InitializeComponent();
             dgTopScores.ItemsSource = new DataView(ds.Tables["Scores"]);
         }

@@ -83,6 +83,12 @@ namespace Scoreboard_Template
             }
         }
 
+        public void submitScore(int score)
+        {
+
+
+        }
+
         public bool authenticate(String user, String pwd)
         {
             bool auth = true;
@@ -90,15 +96,13 @@ namespace Scoreboard_Template
             return auth;
         }
 
-        public DataSet getScores()
+        public DataSet getScores(string tb_username)
         {
             DataSet ds = new DataSet();
             conn = new MySqlConnection(connectionString.ConnectionString);
-            query =
-                "SELECT l.score, u.username, l.sDate FROM leaderboard l " +
-                "INNER JOIN users u ON l.userId = u.id " +
-                "ORDER BY l.score DESC " +
-                "LIMIT 40";
+            query = "SELECT l.score, u.username, l.sDate " +
+                "FROM leaderboard l INNER JOIN users u ON l.userId = u.id " +
+                "WHERE u.username = '" + tb_username + "' ORDER BY l.score DESC LIMIT 40";
             MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
             try
             {
