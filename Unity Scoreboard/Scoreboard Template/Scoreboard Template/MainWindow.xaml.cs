@@ -23,11 +23,12 @@ namespace Scoreboard_Template
     {
         public MainWindow()
         {
-            //string temp = File.ReadAllText(@"..\..\..\..\Nightmares\Test_Data\Score.txt"); //Change to correct relative path
-            string temp = File.ReadAllText(@"Score.txt"); //Change to correct relative path
+            string temp = File.ReadAllText(path: @"..\..\..\..\Nightmares\Test_Data\Score.txt"); //Change to correct relative path
+            //string temp = File.ReadAllText(@"Score.txt"); //Change to correct relative path
             DataHandler dh = new DataHandler();
             if (!dh.verifyDatabase())
             {
+                MessageBox.Show("DB/Tables do not exist - attempting to initialize DB");
                 dh.initializeDatabase();
             }
 

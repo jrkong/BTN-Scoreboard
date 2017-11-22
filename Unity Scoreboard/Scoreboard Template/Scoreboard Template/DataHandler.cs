@@ -26,8 +26,8 @@ namespace Scoreboard_Template
             query = "";
             connectionString = new MySqlConnectionStringBuilder
             {
-                //{ "Host", "99.227.52.70" },
-                { "Host", "localhost" },
+                { "Host", "99.227.52.70" },
+                //{ "Host", "localhost" },
                 { "Port", "3306" },
                 { "Database", "InjectionDataBase" },
                 { "UserId", "Pat" },
