@@ -20,10 +20,13 @@ namespace Scoreboard_Template
     /// </summary>
     public partial class Leaderboard : Window
     {
+        private String u;
+
         public Leaderboard(String user, String score)
         {
+            u = user;
             DataHandler dh = new DataHandler();
-            DataSet ds = dh.getScores(user);
+            DataSet ds = dh.getScores();
             InitializeComponent();
             dgTopScores.ItemsSource = new DataView(ds.Tables["Scores"]);
         }
@@ -31,6 +34,25 @@ namespace Scoreboard_Template
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMyToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnMyToggle.Content.ToString() == "My Scores")
+            {
+                DataHandler dh = new DataHandler();
+                DataSet ds = dh.getMyScores(u);
+                dgTopScores.ItemsSource = new DataView(ds.Tables["Scores"]);
+                (dgTopScores.ItemsSource as DataView).Sort = "score DESC";
+                btnMyToggle.Content = "All Scores";
+            }
+            else
+            {
+                DataHandler dh = new DataHandler();
+                DataSet ds = dh.getScores();
+                dgTopScores.ItemsSource = new DataView(ds.Tables["Scores"]);
+                btnMyToggle.Content = "My Scores";
+            }
         }
     }
 }

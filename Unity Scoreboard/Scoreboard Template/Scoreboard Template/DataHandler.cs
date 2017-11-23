@@ -96,13 +96,37 @@ namespace Scoreboard_Template
             return auth;
         }
 
-        public DataSet getScores(string tb_username)
+        public DataSet getScores()
         {
             DataSet ds = new DataSet();
             conn = new MySqlConnection(connectionString.ConnectionString);
-            query = "SELECT l.score, u.username, l.sDate " +
+            query =
+                "SELECT l.score, u.username, l.sDate " +
                 "FROM leaderboard l INNER JOIN users u ON l.userId = u.id " +
-                "WHERE u.username = '" + tb_username + "' ORDER BY l.score DESC LIMIT 40";
+                "ORDER BY l.score DESC ";
+                //"LIMIT 50";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+            try
+            {
+                conn.Open();
+                da.Fill(ds, "Scores");
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return ds;
+        }
+
+        public DataSet getMyScores(string tb_username)
+        {
+            DataSet ds = new DataSet();
+            conn = new MySqlConnection(connectionString.ConnectionString);
+            query =
+                "SELECT l.score, u.username, l.sDate " +
+                "FROM leaderboard l INNER JOIN users u ON l.userId = u.id " +
+                "WHERE username = '" + tb_username + "'";
             MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
             try
             {
