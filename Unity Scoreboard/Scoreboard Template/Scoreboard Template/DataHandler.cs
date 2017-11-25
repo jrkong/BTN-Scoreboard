@@ -83,6 +83,25 @@ namespace Scoreboard_Template
             }
         }
 
+        public void createUser(string usr, string pwd, string email)
+        {
+            conn = new MySqlConnection(connectionString.ConnectionString);
+            query =
+                "INSERT INTO users (username, password) " +
+                "VALUES('" + usr + "', '" + pwd + "')";
+            cmd = new MySqlCommand(query, conn);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         public void submitScore(int score)
         {
 

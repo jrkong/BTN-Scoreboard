@@ -31,6 +31,16 @@ namespace Scoreboard_Template
             dgTopScores.ItemsSource = new DataView(ds.Tables["Scores"]);
         }
 
+        public Leaderboard()
+        {
+            u = "";
+            DataHandler dh = new DataHandler();
+            DataSet ds = dh.getScores();
+            InitializeComponent();
+            btnMyToggle.IsEnabled = false;
+            dgTopScores.ItemsSource = new DataView(ds.Tables["Scores"]);
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

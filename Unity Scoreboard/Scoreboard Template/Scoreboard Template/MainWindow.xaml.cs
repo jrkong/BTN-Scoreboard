@@ -47,5 +47,23 @@ namespace Scoreboard_Template
                 this.Close();
             }
         }
+
+        private void btnNewGame_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnViewScores_Click(object sender, RoutedEventArgs e)
+        {
+            Leaderboard scores = new Leaderboard();
+            scores.Show();
+            //this.Close();
+        }
+
+        private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
+        {
+            CreateUser newUser = new CreateUser();
+            newUser.Show();
+        }
     }
 }
