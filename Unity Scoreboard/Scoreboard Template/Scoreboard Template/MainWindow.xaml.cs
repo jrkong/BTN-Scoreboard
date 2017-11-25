@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,11 +41,24 @@ namespace Scoreboard_Template
         private void button_Click(object sender, RoutedEventArgs e)
         {
             DataHandler dh = new DataHandler();
-            if (dh.authenticate(tbUsername.Text, tbPassword.Text))
+            int id = dh.authenticate(tbUsername.Text, tbPassword.Password);
+            if ( id != 0)
             {
+                int score;
+                Regex regex = new Regex(@"\d+");
+                Match match = regex.Match(Score_Label.Content.ToString());
+                Int32.TryParse(match.Value, out score);
+                dh.submitScore(score, id);
                 Leaderboard scores = new Leaderboard(tbUsername.Text, Score_Label.Content.ToString());
                 scores.Show();
-                this.Close();
+                btnSubmitScore.IsEnabled = false;
+                lblMainWindowErr.Visibility = Visibility.Hidden;
+                //this.Close();
+            }
+            else
+            {
+                lblMainWindowErr.Content = "Incorrect username or password";
+                lblMainWindowErr.Visibility = Visibility.Visible;
             }
         }
 

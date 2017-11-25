@@ -102,17 +102,51 @@ namespace Scoreboard_Template
             }
         }
 
-        public void submitScore(int score)
+        public void submitScore(int score, int usrId)
         {
-
-
+            conn = new MySqlConnection(connectionString.ConnectionString);
+            query =
+                "INSERT INTO leaderboard (userId, score, sDate) " +
+                "VALUES('" + usrId + "', '" + score + "', NOW())";
+            cmd = new MySqlCommand(query, conn);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
-        public bool authenticate(String user, String pwd)
+        public int authenticate(String user, String pwd)
         {
-            bool auth = true;
-            //perform authentication
-            return auth;
+            int userId = 0;
+            string password = "";
+            DataSet ds = new DataSet();
+            conn = new MySqlConnection(connectionString.ConnectionString);
+            query =
+                "SELECT password, id FROM users " +
+                "WHERE username = '" + user + "'";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+            try
+            {
+                conn.Open();
+                da.Fill(ds);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            password = ds.Tables[0].Rows[0]["password"].ToString();
+            if (pwd == password)
+            {
+                Int32.TryParse(ds.Tables[0].Rows[0]["id"].ToString(), out userId);
+            }
+            return userId;
         }
 
         public DataSet getScores()
