@@ -37,7 +37,7 @@ namespace Scoreboard_Template
             DataHandler dh = new DataHandler();
             DataSet ds = dh.getScores();
             InitializeComponent();
-            btnMyToggle.IsEnabled = false;
+            //btnMyToggle.IsEnabled = false;
             dgTopScores.ItemsSource = new DataView(ds.Tables["Scores"]);
         }
 

@@ -88,8 +88,10 @@ namespace Scoreboard_Template
             conn = new MySqlConnection(connectionString.ConnectionString);
             query =
                 "INSERT INTO users (username, password) " +
-                "VALUES('" + usr + "', '" + pwd + "')";
+                "VALUES(@username, @password)";
             cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@username", usr);
+            cmd.Parameters.AddWithValue("@password", pwd);
             try
             {
                 conn.Open();
@@ -129,8 +131,9 @@ namespace Scoreboard_Template
             conn = new MySqlConnection(connectionString.ConnectionString);
             query =
                 "SELECT password, id FROM users " +
-                "WHERE username = '" + user + "'";
+                "WHERE username = @username";
             MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+            da.SelectCommand.Parameters.AddWithValue("@username", user);
             try
             {
                 conn.Open();
@@ -141,11 +144,15 @@ namespace Scoreboard_Template
             {
                 MessageBox.Show(ex.ToString());
             }
-            password = ds.Tables[0].Rows[0]["password"].ToString();
-            if (pwd == password)
+            if (ds.Tables[0].Rows.Count != 0)
             {
-                Int32.TryParse(ds.Tables[0].Rows[0]["id"].ToString(), out userId);
+                password = ds.Tables[0].Rows[0]["password"].ToString();
+                if (pwd == password)
+                {
+                    Int32.TryParse(ds.Tables[0].Rows[0]["id"].ToString(), out userId);
+                }
             }
+            
             return userId;
         }
 

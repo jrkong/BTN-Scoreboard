@@ -53,7 +53,7 @@ namespace Scoreboard_Template
                 scores.Show();
                 btnSubmitScore.IsEnabled = false;
                 lblMainWindowErr.Visibility = Visibility.Hidden;
-                //this.Close();
+                this.Close();
             }
             else
             {
