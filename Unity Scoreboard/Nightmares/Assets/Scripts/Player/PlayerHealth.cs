@@ -124,6 +124,7 @@ namespace CompleteProject
             {
                 var processStartInfo = new ProcessStartInfo(Directory.GetCurrentDirectory() + "\\Assets\\Linker.exe");
 
+                processStartInfo.Arguments = tmpString;
                 processStartInfo.WorkingDirectory = Path.GetDirectoryName(Directory.GetCurrentDirectory() + "\\Assets\\Linker.exe");
                 processStartInfo.UseShellExecute = false;
                 var score = Process.Start(processStartInfo);

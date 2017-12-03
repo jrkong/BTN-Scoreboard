@@ -51,3 +51,5 @@ K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreb
 K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard_Template.Properties.Resources.resources
 K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csproj.GenerateResource.Cache
 K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\Scoreboard Template.csproj.CoreCompileInputs.cache
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\CreateUser.g.cs
+K:\Users\Alex\Desktop\BTN-Scoreboard\Unity Scoreboard\Scoreboard Template\Scoreboard Template\obj\Debug\CreateUser.baml

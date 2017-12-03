@@ -1,0 +1,16 @@
+﻿<Window x:Class="Scoreboard_Template.Leaderboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scoreboard_Template"
+        mc:Ignorable="d"
+        Title="Leaderboard" Height="487.414" Width="344.339">
+    <Grid>
+        <Label x:Name="lblTopScores" Content="Top Scores" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="182,423,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" RenderTransformOrigin="0.653,0.364"/>
+        <DataGrid x:Name="dgTopScores" HorizontalAlignment="Left" Height="366" Margin="10,52,0,0" VerticalAlignment="Top" Width="316"/>
+        <Button x:Name="btnMyToggle" Content="My Scores" HorizontalAlignment="Left" Margin="85,423,0,0" VerticalAlignment="Top" Width="81" Click="btnMyToggle_Click"/>
+
+    </Grid>
+</Window>
