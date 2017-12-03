@@ -183,21 +183,44 @@ namespace Scoreboard_Template
         {
             DataSet ds = new DataSet();
             conn = new MySqlConnection(connectionString.ConnectionString);
+
+            //Insecure method
+            /*
             query =
                 "SELECT l.score, u.username, l.sDate " +
                 "FROM leaderboard l INNER JOIN users u ON l.userId = u.id " +
                 "WHERE username = '" + tb_username + "'";
-            MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+            */
+
+            /* To sanitize input, used Parameterized Statements and Prepared Statements */
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText =
+                "SELECT l.score, u.username, l.sDate FROM leaderboard l INNER JOIN users u ON l.userId=u.id WHERE username = @uname";
+            MySqlParameter unameParam = new MySqlParameter("@uname", MySqlDbType.String);
+            unameParam.Value = tb_username;
+            cmd.Parameters.Add(unameParam);
+            //conn.Open();
+
+
+
             try
             {
                 conn.Open();
-                da.Fill(ds, "Scores");
+                cmd.Connection = conn;
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+                //MySqlDataAdapter da = new MySqlDataAdapter(cmd.ToString(), conn);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                da.Fill(ds, 0, 10, "Scores");
+                //da.Fill(ds, "Scores");
                 conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
             return ds;
         }
     }
